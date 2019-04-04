@@ -10,8 +10,46 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
-    </body>
+      <h1>Tic Tac Toe </h1>
+
+       <div class="container-fluid wholeUnit">
+
+         <div class="row tic-row">
+           <div class="col-4 unit" > </div>
+           <div class="col-4 unit"> </div>
+           <div class="col-4 unit">  </div>
+         </div>
+         <div class="row tic-row">
+           <div class="col-4 unit">  </div>
+           <div class="col-4 unit">  </div>
+           <div class="col-4 unit">  </div>
+         </div>
+         <div class="row tic-row">
+           <div class="col-4 unit">  </div>
+           <div class="col-4 unit">  </div>
+           <div class="col-4 unit">  </div>
+       </div>
+     </div>
+
+       <form id="sign-up">
+        <input type="text" name="credentials[email]" placeholder="Email">
+        <input type="text" name="credentials[password]" placeholder="password">
+        <input type="text" name="credentials[password_confirmation]" placeholder="password_confirmation">
+        <input type="submit" value="Sign Up!">
+      </form>
+
+      <form id="sign-in">
+        <input type="text" name="credentials[email]" placeholder="Email">
+        <input type="text" name="credentials[password]" placeholder="password">
+        <input type="submit" value="Sign in!">
+      </form>
+
+      <form id="change-password">
+        <input type="password" name="passwords[old]" placeholder="old-passored">
+        <input type="password" name="passwords[old]" placeholder="new-passored">
+        <input type="submit" value="change password">
+      </form>
 </html>

@@ -1,1 +1,42 @@
 @import '~bootstrap/scss/bootstrap';
+
+h1 {
+  color: #ff0000;
+  text-align: center;
+
+}
+
+ads {
+  background: #f4CC70;
+  margin: .4vw 0;
+  padding: .4vw;
+  text-align: center;
+}
+
+.content {
+  margin: .4vw 0;
+  background: #add8e6;
+  padding: .4vw;
+}
+
+
+.tic-panel {
+  border: solid 2px black;
+  margin: .4vw 0;
+  background: #66A5AD;
+  padding: .4vw;
+}
+
+.unit {
+  border: solid black 1px;
+  font-size: 5vw;
+  background: #6AB187;
+  text-align: center;
+  color: lavender;
+  width: 85px;
+  height: 85px;
+}
+
+.unit:hover {
+   background: #20948B;
+}
