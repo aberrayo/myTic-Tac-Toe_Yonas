@@ -1,61 +1,63 @@
 'use strict'
 
-const checkWinner = function () {
-  const unit1 = $('#unit1'),
-        unit2 = $('#unit2'),
-        unit3= $('#unit3'),
-        unit4 = $('#unit4'),
-        unit5 = $('#unit5'),
-        unit6 = $('#unit6'),
-        unit7 = $('#unit7'),
-        unit8 = $('#unit8'),
-        unit9 = $('#unit9')
-
-if (unit1.html()!== '' && unit1.html() === unit2.html() && unit1.html()===unit3.html()) {
-
-    console.log('winner')
-
-}
-else if(unit4.html()!==''&& unit4.html() === unit5.html() && unit4.html()===unit6.html()) {
-
-    console.log('winner')
-}
-
-else if(unit7.html()!==''&& unit7.html() === unit8.html() && unit7.html()===unit9.html()) {
-    console.log('winner')
-}
-
-else if (unit1.html()!==''&& unit1.html() ===  unit4.html() && unit1.html()===unit7.html()) {
-    console.log('winner')
-}
-
-else if (unit2.html()!==''&& unit2.html() === unit5.html() && unit2.html()===unit8.html()) {
-    console.log('winner')
-}
-
-else if (unit3.html()!==''&& unit3.html() === unit6.html() && unit3.html()===unit9.html()) {
-    console.log('winner')
-}
-
-else if (unit1.html()!==''&& unit1.html() === unit5.html() && unit1.html()===unit9.html()) {
-    console.log('winner')
-}
-
-else if (unit3.html()!==''&& unit3.html() === unit5.html() && unit1.html()===unit7.html()) {
-    console.log('winner')
-}
-}
-let playerCurrent = 'X'
-const nextTurn = function() {
-  if(playerCurrent==='X'){
-    playerCurrent = 'O'
-  } else {
-    playerCurrent = 'X'
-  }
-}
+const arr = ['', '', '', '', '', '', '', '', '']
+let move = 'x'
 const onClick = function (event) {
   event.preventDefault()
-  console.log('button is clicked')
+  const cell = event.target
+
+  if (move==='X') {
+    move = 'O'
+
+  /*  $(cell).text(move)
+    arr[cell] = move
+    checkWin(arr, move)
+    move = 'o'*/
+  }else  {
+    move = 'X'
+  }
+
+  const content = $(cell).text(move)
+  console.log(move)
+  if (content === '' && move === 'o') {
+    (event.target.id).text(move)
+    arr[cell] = move
+    checkWin(arr, move)
+    move = 'x'
+  } else {
+    //alert('Cand Do That!')
+  }
 }
 
-$('.unit').on('click', onClick)
+let gameOver = false
+const checkWin = function (arr, move) {
+  console.log(checkWin)
+  console.log(move)
+  if
+  ((arr[0] === arr[1] && arr[1] === arr[2] && arr[0] === move) ||
+(arr[3] === arr[4] && arr[4] === arr[5] && arr[3] === move) ||
+(arr[6] === arr[7] && arr[7] === arr[8] && arr[6] === move) ||
+(arr[0] === arr[4] && arr[4] === arr[8] && arr[0] === move) ||
+(arr[2] === arr[4] && arr[4] === arr[6] && arr[2] === move) ||
+(arr[0] === arr[3] && arr[3] === arr[6] && arr[0] === move) ||
+(arr[1] === arr[4] && arr[4] === arr[7] && arr[1] === move) ||
+(arr[2] === arr[5] && arr[5] === arr[8] && arr[2] === move)) {
+    gameOver = true
+    alert(move + ' is the winner!')
+  } else if (arr.every(index => index !== '')) {
+    //gameOver = true
+    console.log('its a tie! ')
+  }
+}
+const addHandlers = function () {
+  $('.unit').on('click', onClick)
+  console.log(addHandlers)
+  /*$('#new-game').on('click', onNewGame)
+  $('#new-user').on('click', newUserclick)
+  $('#returning-user').on('click', returningUserclick)
+  $('#user-management').on('click', accountClick)
+  $('#reset-game').on('click', resetClick)8*/
+}
+module.exports = {
+  addHandlers
+}

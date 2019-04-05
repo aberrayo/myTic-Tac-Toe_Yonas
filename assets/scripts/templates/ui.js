@@ -16,10 +16,20 @@ const changePwSuccess = function (data) {
 const changePwFailure = function (data) {
   console.log('sign up success ran with the data:', data)
 }
+const signInSuccess = function (data) {
+  console.log('sign in success ran with the data:', data)
+  store.user = data.user
+}
 
-module.export = {
+const signInFailure = function (data) {
+  console.log('sign in success ran with the data:', data)
+}
+
+module.exports = {
   signUpSuccess,
   signUpFailure,
   changePwSuccess,
-  changePwFailure
+  changePwFailure,
+  signInSuccess,
+  signInFailure
 }

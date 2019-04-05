@@ -13,13 +13,6 @@ button {
 button:hover {
   background: #175;
 }
- ads {
-  background: #adab66;
-  margin: .4vw 0;
-  padding: .4vw;
-  text-align: center;
-}
-
 .content {
   margin: .4vw 0;
   background: #add8e6;
@@ -38,11 +31,14 @@ button:hover {
   font-size: 5vw;
   background: #c69;
   text-align: center;
-  color: red;
+  color: black;
   width: 85px;
   height: 85px;
 }
 
 .unit:hover {
    background: #036;
+}
+.forms {
+justify-content:space-between;
 }

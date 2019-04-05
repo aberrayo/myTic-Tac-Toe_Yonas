@@ -25,7 +25,7 @@ const changePassword = function (data) {
   })
 }
 
-module.export = {
+module.exports = {
   signUp,
   signIn,
   changePassword
