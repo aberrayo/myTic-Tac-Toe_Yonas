@@ -3,7 +3,6 @@
     <head>
       <title>Example</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
@@ -15,25 +14,29 @@
     <body>
       <h1>Tic Tac Toe </h1>
 
-       <div class="container-fluid wholeUnit">
 
-         <div class="row tic-row">
-           <div class="col-4 unit" > </div>
-           <div class="col-4 unit"> </div>
-           <div class="col-4 unit">  </div>
+
+<div class="container-fluid wholeUnit" id="allUnits">
+         <div class="row container-row">
+           <div class="col-4 unit" id = "unit1" > </div>
+           <div class="col-4 unit" id = "unit2"> </div>
+           <div class="col-4 unit" id = "unit3">  </div>
          </div>
-         <div class="row tic-row">
-           <div class="col-4 unit">  </div>
-           <div class="col-4 unit">  </div>
-           <div class="col-4 unit">  </div>
+         <div class="row container-row">
+           <div class="col-4 unit" id = "unit4">  </div>
+           <div class="col-4 unit" id = "unit5">  </div>
+           <div class="col-4 unit" id = "unit6">  </div>
          </div>
-         <div class="row tic-row">
-           <div class="col-4 unit">  </div>
-           <div class="col-4 unit">  </div>
-           <div class="col-4 unit">  </div>
+         <div class="row container-row">
+           <div class="col-4 unit" id = "unit7">  </div>
+           <div class="col-4 unit" id = "unit8">  </div>
+           <div class="col-4 unit" id = "unit9">  </div>
        </div>
-     </div>
+</div>
 
+<button>Play Again</button>
+
+ <div>
        <form id="sign-up">
         <input type="text" name="credentials[email]" placeholder="Email">
         <input type="text" name="credentials[password]" placeholder="password">
@@ -52,4 +55,6 @@
         <input type="password" name="passwords[old]" placeholder="new-passored">
         <input type="submit" value="change password">
       </form>
+    </div>
+  </body>
 </html>
