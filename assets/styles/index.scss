@@ -3,11 +3,18 @@
 h1 {
   color: #ff0000;
   text-align: center;
+}
+button {
+  background-color: inherit;
+  text-align: center;
+  position: absolute;
 
 }
-
-ads {
-  background: #f4CC70;
+button:hover {
+  background: #175;
+}
+ ads {
+  background: #adab66;
   margin: .4vw 0;
   padding: .4vw;
   text-align: center;
@@ -19,24 +26,23 @@ ads {
   padding: .4vw;
 }
 
-
-.tic-panel {
+.container {
   border: solid 2px black;
   margin: .4vw 0;
-  background: #66A5AD;
+  background: #red;
   padding: .4vw;
 }
 
 .unit {
   border: solid black 1px;
   font-size: 5vw;
-  background: #6AB187;
+  background: #c69;
   text-align: center;
-  color: lavender;
+  color: red;
   width: 85px;
   height: 85px;
 }
 
 .unit:hover {
-   background: #20948B;
+   background: #036;
 }

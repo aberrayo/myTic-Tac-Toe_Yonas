@@ -3,6 +3,8 @@
 const getFormFields = require('./../../../lib/get-form-fields.js')
 const api = require('./api')
 const ui = require('./ui')
+const turn = 'X'
+
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -36,9 +38,6 @@ const addHandlers = function () {
   $('#change-password').on('submit', onChangePassword)
 }
 
-$('.unit').on('click', function () {
-  console.log(('button is clicked')).html("hi")
-})
 module.export = {
   addHandlers
 }

@@ -5,8 +5,12 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
-const userEvents = require('./templates/events.js')
+const autEvents = require('./templates/events.js')
+require('./ticGame/gamelogic.js')
+
+
 $(() => {
   // your JS code goes here
+  autEvents.addHandlers()
   userEvents.addHandlers()
 })
