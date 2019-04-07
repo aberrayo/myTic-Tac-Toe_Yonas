@@ -12,49 +12,54 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
+
       <h1>Tic Tac Toe </h1>
 
-<div class='forms'>
-       <form id="sign-up">
+<div id="account-wrapper" >
+       <form>
         <input type="text" name="credentials[email]" placeholder="Email">
         <input type="text" name="credentials[password]" placeholder="password">
-        <input type="text" name="credentials[password_confirmation]" placeholder="password_confirmation">
+        <input type="text" name="credentials[password_confirmation]" placeholder="Confirm">
         <input type="submit" value="Sign Up!">
       </form>
 
-      <form id="sign-in">
+      <form>
         <input type="text" name="credentials[email]" placeholder="Email">
         <input type="text" name="credentials[password]" placeholder="password">
         <input type="submit" value="Sign in!">
       </form>
 
-      <form id="change-password">
+      <form>
         <input type="password" name="passwords[old]" placeholder="old-passored">
         <input type="password" name="passwords[old]" placeholder="new-passored">
         <input type="submit" value="change password">
       </form>
-    </div>
-
-<div class="container-fluid wholeUnit" id="allUnits">
-         <div class="row container-row">
-           <div class="col-4 unit" id="unit1" ></div>
-           <div class="col-4 unit" id="unit2"></div>
-           <div class="col-4 unit" id="unit3"></div>
-         </div>
-         <div class="row container-row">
-           <div class="col-4 unit" id="unit4"></div>
-           <div class="col-4 unit" id="unit5"></div>
-           <div class="col-4 unit" id="unit6"></div>
-         </div>
-         <div class="row container-row">
-           <div class="col-4 unit" id="unit7"></div>
-           <div class="col-4 unit" id="unit8"></div>
-           <div class="col-4 unit" id="unit9"></div>
-       </div>
 </div>
 
-<button id='button'>Play Again</button>
+<h3>Game</h3>
+<button type="button" class="btn-primary btn-xs" id="out">Sign out</button>
+<div>
+<button type="button" class="btn-primary btn-sm">Start Game</button>
+</div>
 
+<div class="col-3" class="container-row">
+         <div class="row container-row">
+           <div class="col-3 unit" id="unit1"></div>
+           <div class="col-3 unit" id="unit2"></div>
+           <div class="col-3 unit" id="unit3"></div>
+         </div>
+         <div class="row container-row">
+           <div class="col-3 unit" id="unit4"></div>
+           <div class="col-3 unit" id="unit5"></div>
+           <div class="col-3 unit" id="unit6"></div>
+         </div>
+         <div class="row container-row">
+           <div class="col-3 unit" id="unit7"></div>
+           <div class="col-3 unit" id="unit8"></div>
+           <div class="col-3 unit" id="unit9"></div>
+       </div>
+</div>
+<button id="button" class="btn-primary btn-sm">Play Again</button>
 
   </body>
 </html>
