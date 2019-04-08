@@ -1,5 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
-
+body {
+  background: radial-gradient(circle, #f0ad4e, white);
+  backface-visibility: visible;
+}
 h1 {
   color: #ff0000;
   text-align: center;
