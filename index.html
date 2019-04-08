@@ -3,15 +3,67 @@
     <head>
       <title>Example</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
-    </body>
+
+      <h1>Tic Tac Toe </h1>
+
+<div id="account-wrapper" >
+       <form>
+        <input type="text" name="credentials[email]" placeholder="Email">
+        <input type="text" name="credentials[password]" placeholder="password">
+        <input type="text" name="credentials[password_confirmation]" placeholder="Confirm">
+        <input type="submit" value="Sign Up!">
+      </form>
+
+      <form>
+        <input type="text" name="credentials[email]" placeholder="Email">
+        <input type="text" name="credentials[password]" placeholder="password">
+        <input type="submit" value="Sign in!">
+      </form>
+
+      <form>
+        <input type="password" name="passwords[old]" placeholder="old-passored">
+        <input type="password" name="passwords[old]" placeholder="new-passored">
+        <input type="submit" value="change password">
+      </form>
+</div>
+
+<h3>Game</h3>
+<button type="button" class="btn-primary btn-xs" id="out">Sign out</button>
+<div>
+<button type="button" class="btn-primary btn-sm">Start Game</button>
+</div>
+
+<div class="Container" class="container-row">
+  <div class="row container-row">
+     <div class="col-3 unit" id="unit1"></div>
+     <div class="col-3 unit" id="unit1"></div>
+     <div class="col-3 unit" id="unit1"></div>
+  </div>
+  <div class="row container-row">
+     <div class="col-3 unit" id="unit2"></div>
+     <div class="col-3 unit" id="unit3"></div>
+     <div class="col-3 unit" id="unit3"></div>
+  </div>
+  <div class="row container-row">
+    <div class="col-3 unit" id="unit2"></div>
+    <div class="col-3 unit" id="unit3"></div>
+    <div class="col-3 unit" id="unit3"></div>
+  </div>
+</div>
+
+<button id="button" class="btn-primary btn-sm">Play Again</button>
+
+
+
+
+  </body>
 </html>
