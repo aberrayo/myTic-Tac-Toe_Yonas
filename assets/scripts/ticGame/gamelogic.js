@@ -1,33 +1,29 @@
 'use strict'
-const arr = ['', '', '', '', '', '', '', '', '']
+// const arr = ['', '', '', '', '', '', '', '', '']
 let firstMove = 'x'
 
 const onClick = function (event) {
   event.preventDefault()
 
-firstMove = firstMove === 'X' ? 'O' : 'X'
+  firstMove = firstMove === 'X' ? 'O' : 'X'
   $(event.target).text(firstMove)
 }
-console.log(arr)
 
-
-  /*console.log(arr)
+/* console.log(arr)
   if (content === '' && firstMove === 'o') {
     $(event.target).text(firstMove)
-    console.log(event.target)*/
-    //$(cell).text(firstMove)
-    //arr[event.target] = firstMove
-  //  firstMove = 'x'
-  /*} else {
+    console.log(event.target) */
+// $(cell).text(firstMove)
+// arr[event.target] = firstMove
+//  firstMove = 'x'
+/* } else {
     // alert('Cand Do That!')
   }
-}*/
+} */
 
- let gameOver = false
+ /*let gameOver = false
 const checkWin = function (arr) {
-  console.log(checkWin)
-  console.log(firstMove)
-  if ((arr[0] === arr[1] && arr[1] === arr[2] && arr[0] === firstMove) ||
+ if  ((arr[0] === arr[1] && arr[1] === arr[2] && arr[0] === firstMove) ||
 (arr[3] === arr[4] && arr[4] === arr[5] && arr[3] === firstMove) ||
 (arr[6] === arr[7] && arr[7] === arr[8] && arr[6] === firstMove) ||
 (arr[0] === arr[4] && arr[4] === arr[8] && arr[0] === firstMove) ||
@@ -37,12 +33,13 @@ const checkWin = function (arr) {
 (arr[2] === arr[5] && arr[5] === arr[8] && arr[2] === firstMove)) {
     gameOver = true
     alert(firstMove + ' is the winner!')
-  } else if (array.length === 9) {
+  } else if (arr.length === 9) {
     console.log('Draw')
-    //gameOver = true
+    // gameOver = true
     console.log('its a tie! ')
   }
-}
+}*/
+
 function button () {
   location.reload()
 }
@@ -51,12 +48,6 @@ const addHandlers = function () {
   $('#button').on('click', button)
   $('#account-wrapper').hide()
 }
-  console.log(checkWin)
-  /*$('#new-game').on('click', onNewGame)
-  $('#new-user').on('click', newUserclick)
-  $('#returning-user').on('click', returningUserclick)
-  $('#user-management').on('click', accountClick)
-  $('#reset-game').on('click', resetClick)8*/
 
 module.exports = {
   addHandlers
