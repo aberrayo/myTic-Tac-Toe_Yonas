@@ -64,6 +64,7 @@ const signOutSuccess = function (data) {
   setTimeout(function () {
     $('#response').text('')
   }, 3000)
+  $('#sign-up').fadeIn(7000)
   $('#sign-out').fadeOut(4000)
   $('.authen-container').fadeIn(7000)
   $('#response').text('Successful SignOut!')
