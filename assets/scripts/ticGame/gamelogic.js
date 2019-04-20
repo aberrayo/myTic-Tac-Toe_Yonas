@@ -1,52 +1,94 @@
 'use strict'
-// const arr = ['', '', '', '', '', '', '', '', '']
-let firstMove = 'x'
+const api = require('./gameApi.js')
+const ui = require('./gameUi.js')
+
+let a = ['', '', '', '', '', '', '', '', '']
+
+let player = 'X'
+
+let gameOver = false
+
+const turn = function () {
+  player = player === 'X' ? 'O' : 'X'
+  $('#response').text(`Turn, ${player}`)
+}
+
+const winConditions = function (a, player) {
+  if ((a[0] === a[1] && a[1] === a[2] && a[0] === player) ||
+(a[3] === a[4] && a[4] === a[5] && a[3] === player) ||
+(a[6] === a[7] && a[7] === a[8] && a[6] === player) ||
+(a[0] === a[4] && a[4] === a[8] && a[0] === player) ||
+(a[2] === a[4] && a[4] === a[6] && a[2] === player) ||
+(a[0] === a[3] && a[3] === a[6] && a[0] === player) ||
+(a[1] === a[4] && a[4] === a[7] && a[1] === player) ||
+(a[2] === a[5] && a[5] === a[8] && a[2] === player)) {
+    gameOver = true
+    $('#stats').text(`${player} wins!`)
+  } else if (a.every(index => index !== '')) {
+    gameOver = true
+    $('#stats').text('Draw!')
+  }
+}
+
+const endGame = function () {
+  if (gameOver === true) {
+    $('.container').hide(1000)
+    setTimeout(function () {
+      $('#stats').text('')
+    }, 2000)
+    $('#response').hide()
+    $('#stats').show()
+    player = 'X'
+  }
+}
+
+const newGame = function (event) {
+  event.preventDefault()
+  api.newGame()
+    .then(ui.createGameSuccess)
+    .catch(ui.createGameFailure)
+  $('.box').text('')
+  $('#stats').text('')
+  $('#response').show()
+  a = ['', '', '', '', '', '', '', '', '']
+  player = 'O'
+  gameOver = false
+  turn()
+}
+
+const getGames = function () {
+  event.preventDefault()
+  api.getGames()
+    .then(ui.getGamesSuccess)
+    .catch(ui.getGamesFailure)
+}
 
 const onClick = function (event) {
-  event.preventDefault()
-
-  firstMove = firstMove === 'X' ? 'O' : 'X'
-  $(event.target).text(firstMove)
+  const currentBox = $(event.target).data('id')
+  const emptyBox = $(event.target).text()
+  if (emptyBox === '' && player === 'X') {
+    $(event.target).text(player)
+    a[currentBox] = player
+    winConditions(a, player)
+    api.updateGame(currentBox, player, gameOver)
+    endGame()
+    turn()
+  } else if (emptyBox === '' && player === 'O') {
+    $(event.target).text(player)
+    a[currentBox] = player
+    winConditions(a, player)
+    api.updateGame(currentBox, player, gameOver)
+    endGame()
+    turn()
+  } else if (emptyBox !== '') {
+    $('#response').text('Invalid move')
+  }
 }
 
-/* console.log(arr)
-  if (content === '' && firstMove === 'o') {
-    $(event.target).text(firstMove)
-    console.log(event.target) */
-// $(cell).text(firstMove)
-// arr[event.target] = firstMove
-//  firstMove = 'x'
-/* } else {
-    // alert('Cand Do That!')
-  }
-} */
-
- /*let gameOver = false
-const checkWin = function (arr) {
- if  ((arr[0] === arr[1] && arr[1] === arr[2] && arr[0] === firstMove) ||
-(arr[3] === arr[4] && arr[4] === arr[5] && arr[3] === firstMove) ||
-(arr[6] === arr[7] && arr[7] === arr[8] && arr[6] === firstMove) ||
-(arr[0] === arr[4] && arr[4] === arr[8] && arr[0] === firstMove) ||
-(arr[2] === arr[4] && arr[4] === arr[6] && arr[2] === firstMove) ||
-(arr[0] === arr[3] && arr[3] === arr[6] && arr[0] === firstMove) ||
-(arr[1] === arr[4] && arr[4] === arr[7] && arr[1] === firstMove) ||
-(arr[2] === arr[5] && arr[5] === arr[8] && arr[2] === firstMove)) {
-    gameOver = true
-    alert(firstMove + ' is the winner!')
-  } else if (arr.length === 9) {
-    console.log('Draw')
-    // gameOver = true
-    console.log('its a tie! ')
-  }
-}*/
-
-function button () {
-  location.reload()
-}
 const addHandlers = function () {
-  $('.unit').on('click', onClick)
-  $('#button').on('click', button)
-  $('#account-wrapper').hide()
+  $('.box').on('click', onClick)
+  $('#create').on('submit', newGame)
+  $('.stats').on('submit', getGames)
 }
 
 module.exports = {

@@ -1,10 +1,11 @@
 
-curl 'https://tic-tac-toe-wdi-production.herokuapp.com'
+curl "https://wdi-library-api.herokuapp.com/change-password" \
   --include \
-  --request PATCH\
-  --header "Authorization: Token token=${TOKEN}"\
-  --header "Content-Type: application/json"
-  --data '{
+  --request PATCH \
+  --header "Content-Type: application/json" \
+  -request PATCH \
+  --header "Authorization: Token token=${TOKEN}" \
+  --data  '{
     "passwords": {
       "old": "'"${OLDPW}"'",
       "new": "'"${NEWPW}"'"

@@ -1,12 +1,12 @@
-curl'https://tic-tac-toe-wdi-production.herokuapp.com' \
+curl "https://wdi-library-api.herokuapp.com/sign-up" \
   --include \
-  --request PATCH \
-  --header "Authorization: Token token=${TOKEN}" \
+  --request POST \
   --header "Content-Type: application/json" \
   --data '{
-    "passwords": {
-      "old": "'"${OLDPW}"'",
-      "new": "'"${NEWPW}"'"
+    "credentials": {
+      "email": "'"${EMAIL}"'",
+      "password": "'"${PASSWORD}"'",
+      "password_confirmation": "'"${PASSWORD}"'"
     }
   }'
 

@@ -1,35 +1,94 @@
 'use strict'
 const store = require('../store')
+
 const signUpSuccess = function (data) {
-  console.log('sign up success ran with the data:', data)
+  $('#sign-up').show()
+  setTimeout(function () {
+    $('#response').text('')
+  }, 2000)
+  $('#response').text('Successful SignUp!')
+  $('#sign-up').hide(1000)
   $('form').trigger('reset')
 }
 
 const signUpFailure = function (data) {
-  console.log('sign up success ran with the data:', data)
-}
-const changePwSuccess = function (data) {
-  console.log('sign up success ran with the data:', data)
-  store.user = data.user
+  setTimeout(function () {
+    $('#response').text('')
+  }, 3000)
+  $('#response').text('Error, Try again!')
+  $('form').trigger('reset')
 }
 
-const changePwFailure = function (data) {
-  console.log('sign up success ran with the data:', data)
-}
 const signInSuccess = function (data) {
-  console.log('sign in success ran with the data:', data)
+  setTimeout(function () {
+    $('#response').text('')
+  }, 3000)
+  $('#response').text('Successful LogIn!')
+  $('.authen-container').hide()
   store.user = data.user
+  $('#change-password').show()
+  $('#sign-out').show()
+  $('.stats').show()
+  $('#create').show()
+  $('form').trigger('reset')
 }
 
 const signInFailure = function (data) {
-  console.log('sign in success ran with the data:', data)
+  setTimeout(function () {
+    $('#response').text('')
+  }, 2000)
+  $('#message').text('Error, Try again!')
+  $('form').trigger('reset')
+}
+
+const changePasswordSuccess = function () {
+  setTimeout(function () {
+    $('#message').text('')
+  }, 3000)
+  $('#change-password').show()
+  $('#response').text('Successful')
+  $('#response').show()
+  $('.container').hide(500)
+  $('form').trigger('reset')
+}
+
+const changePasswordFailure = function (data) {
+  setTimeout(function () {
+    $('#response').text('')
+  }, 2000)
+  $('#response').text('Error, try again.')
+  $('#response').show()
+  $('form').trigger('reset')
+}
+
+const signOutSuccess = function (data) {
+  setTimeout(function () {
+    $('#response').text('')
+  }, 3000)
+  $('#sign-out').hide()
+  $('.authen-container').show()
+  $('#response').text('Successful SignOut!')
+  $('#stats').hide()
+  $('#change-password').hide()
+  $('.container').hide()
+  $('.stats').hide()
+  $('#create').hide()
+  store.user = null
+  $('form').trigger('reset')
+}
+
+const signOutFailure = function () {
+  $('#sign-out').text('Error, try again!')
+  $('form').trigger('reset')
 }
 
 module.exports = {
   signUpSuccess,
   signUpFailure,
-  changePwSuccess,
-  changePwFailure,
   signInSuccess,
-  signInFailure
+  signInFailure,
+  changePasswordSuccess,
+  changePasswordFailure,
+  signOutSuccess,
+  signOutFailure
 }

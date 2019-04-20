@@ -1,7 +1,7 @@
-curl 'https://tic-tac-toe-wdi-production.herokuapp.com' \
+curl "https://wdi-library-api.herokuapp.com/sign-out" \
   --include \
-  --request POST \
+  --request DELETE \
   --header "Content-Type: application/json" \
-  --data ''
+  --header "Authorization: Token token=${TOKEN}"
 
 echo

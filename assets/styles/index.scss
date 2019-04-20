@@ -1,67 +1,93 @@
 @import '~bootstrap/scss/bootstrap';
-body {
-  background: radial-gradient(circle, #f0ad4e, white);
-  backface-visibility: visible;
-}
+
 h1 {
-  color: #ff0000;
+  color: #FFFFFF;
+  font-style: normal;
+  padding: 20px 50px;
   text-align: center;
 }
-#out {
 
-   position: fixed;
+body {
+  background: radial-gradient(circle, #0000B2, white);
+  background-color: #7FB3D5;
+}
+
+p {
+  color: #ff0000;
+  font-size: 17px;
+  text-align: center;
+}
+
+.stats, .container {
+  display: none;
+}
+
+#stats {
+  color: #FF0000;
+  font-size: 20px;
+  text-align: center;
+}
+
+#response {
+  color: #FF0000;
+  font-size: 20px;
+  text-align: center;
+}
+
+#getGames {
+  font-size: 25px;
+  text-align: center;
+  padding: 10px 30px;
+}
+
+.sign-up-container {
+  font-size: 20px;
+  padding: 10px 30px;
+  text-align: center;
+}
+
+.sign-in-container {
+  font-size: 20px;
+  padding: 10px 30px;
+  text-align: center;
+}
+
+#change-password {
+  font-size: 25px;
+  display: none;
+  padding: 20px 50px;
+  text-align: center;
+}
+
+#sign-out {
+  position: fixed;
    right:10px;
    top:5px;
 }
-#button {
-  background: #dc3545 solid;
-  position: fixed;
-  center: 5px;
-  justify-content: center;
+
+#create {
+  font-size: 25px;
+  display: none;
+  padding: 10px 30px;
   text-align: center;
-  &:hover {
-    background: #175;
-}
-}
-/*start {
-  text-align: center;
-}*/
-
-.content {
-  background: #add8e6;
-  margin: .4vw 0;
-  padding: .4vw;
 }
 
-.container-row {
-  // background: #dc3545;
-  // border: solid 2px black;
-  margin: .4vw 0;
-  padding: .4vw;
-  width: 400px;
-  justify-content: center;
-}
-
-.unit {
+div.box {
   background: #c69;
-  border: solid black 1px;
-  color: black;
-  font-size: 5vw;
-  height: 85px;
-  text-align: center;
-  width: 85px;
-  &:hover {
-    background: #036;
-}
 }
 
-.form-group {
-  justify-content: flex-end;
-  border: 2px solid #000;
+.box {
+  font-size: 60px;
+  text-align: center;
+  color:  #FFFFFF;
 }
 
-h3 {
-  justify-content: space-between;
-  text-align: center;
-  color: #228B22;
+.col-4 {
+  border: 2px solid black;
+  height: 100px;
+  width: 500px;
+}
+
+div.col-4:hover {
+  background-color: #036;
 }
