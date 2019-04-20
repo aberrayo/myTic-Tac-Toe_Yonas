@@ -7,8 +7,8 @@ const getGamesSuccess = function (games) {
     $('#response').text('')
   }, 2500)
   $('#response').text('Games Played: ' + numberOfGamesPlayed)
-  $('#getGames').show()
-  $('#response').show()
+  $('#getGames').fadeIn(5000)
+  $('#response').fadeIn(5000)
 }
 
 const getGamesFailure = function (data) {

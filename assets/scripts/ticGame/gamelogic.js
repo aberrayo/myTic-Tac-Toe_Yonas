@@ -64,23 +64,23 @@ const getGames = function () {
 }
 
 const onClick = function (event) {
-  const currentBox = $(event.target).data('id')
-  const emptyBox = $(event.target).text()
-  if (emptyBox === '' && player === 'X') {
+  const selector = $(event.target).data('id')
+  const content = $(event.target).text()
+  if (content === '' && player === 'X') {
     $(event.target).text(player)
-    a[currentBox] = player
+    a[selector] = player
     winConditions(a, player)
-    api.updateGame(currentBox, player, gameOver)
+    api.updateGame(selector, player, gameOver)
     endGame()
     turn()
-  } else if (emptyBox === '' && player === 'O') {
+  } else if (content === '' && player === 'O') {
     $(event.target).text(player)
-    a[currentBox] = player
+    a[selector] = player
     winConditions(a, player)
-    api.updateGame(currentBox, player, gameOver)
+    api.updateGame(selector, player, gameOver)
     endGame()
     turn()
-  } else if (emptyBox !== '') {
+  } else if (content !== '') {
     $('#response').text('Invalid move')
   }
 }

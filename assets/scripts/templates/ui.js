@@ -7,7 +7,7 @@ const signUpSuccess = function (data) {
     $('#response').text('')
   }, 2000)
   $('#response').text('Successful SignUp!')
-  $('#sign-up').hide(1000)
+  $('#sign-up').fadeOut(2000)
   $('form').trigger('reset')
 }
 
@@ -22,14 +22,14 @@ const signUpFailure = function (data) {
 const signInSuccess = function (data) {
   setTimeout(function () {
     $('#response').text('')
-  }, 3000)
+  }, 5000)
   $('#response').text('Successful LogIn!')
-  $('.authen-container').hide()
+  $('.authen-container').fadeOut(2000)
   store.user = data.user
-  $('#change-password').show()
-  $('#sign-out').show()
-  $('.stats').show()
-  $('#create').show()
+  $('#change-password').fadeIn(4000)
+  $('#sign-out').fadeIn(4000)
+  $('.stats').fadeIn(4000)
+  $('#create').fadeIn(4000)
   $('form').trigger('reset')
 }
 
@@ -64,15 +64,15 @@ const changePasswordFailure = function (data) {
 const signOutSuccess = function (data) {
   setTimeout(function () {
     $('#response').text('')
-  }, 3000)
-  $('#sign-out').hide()
-  $('.authen-container').show()
+  }, 5000)
+  $('#sign-out').fadeOut()
+  $('.authen-container').fadeIn(4000)
   $('#response').text('Successful SignOut!')
-  $('#stats').hide()
-  $('#change-password').hide()
-  $('.container').hide()
-  $('.stats').hide()
-  $('#create').hide()
+  $('#stats').fadeOut(4000)
+  $('#change-password').fadeOut(4000)
+  $('.container').fadeOut(4000)
+  $('.stats').fadeOut(4000)
+  $('#create').fadeOut(4000)
   store.user = null
   $('form').trigger('reset')
 }
