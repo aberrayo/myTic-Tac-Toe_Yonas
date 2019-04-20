@@ -60,9 +60,10 @@ p {
 }
 
 #sign-out {
-  position: fixed;
-   right:10px;
-   top:5px;
+  font-size: 25px;
+  display: none;
+  padding: 10px 30px;
+  text-align: center;
 }
 
 #create {
@@ -85,7 +86,7 @@ div.box {
 .col-4 {
   border: 2px solid black;
   height: 100px;
-  width: 500px;
+  width: 100px;
 }
 
 div.col-4:hover {

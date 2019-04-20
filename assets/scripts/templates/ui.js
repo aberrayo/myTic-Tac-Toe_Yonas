@@ -26,10 +26,10 @@ const signInSuccess = function (data) {
   $('#response').text('Successful LogIn!')
   $('.authen-container').fadeOut(2000)
   store.user = data.user
-  $('#change-password').fadeIn(4000)
-  $('#sign-out').fadeIn(4000)
-  $('.stats').fadeIn(4000)
-  $('#create').fadeIn(4000)
+  $('#change-password').fadeIn(7000)
+  $('#sign-out').fadeIn(7000)
+  $('.stats').fadeIn(7000)
+  $('#create').fadeIn(7000)
   $('form').trigger('reset')
 }
 

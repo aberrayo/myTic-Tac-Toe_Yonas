@@ -32,10 +32,10 @@ const winConditions = function (a, player) {
 
 const endGame = function () {
   if (gameOver === true) {
-    $('.container').hide(1000)
+    $('.container').fadeOut(5000)
     setTimeout(function () {
       $('#stats').text('')
-    }, 2000)
+    }, 4000)
     $('#response').hide()
     $('#stats').show()
     player = 'X'

@@ -5,10 +5,10 @@ const getGamesSuccess = function (games) {
   const numberOfGamesPlayed = games.games.length
   setTimeout(function () {
     $('#response').text('')
-  }, 2500)
+  }, 4000)
   $('#response').text('Games Played: ' + numberOfGamesPlayed)
-  $('#getGames').fadeIn(5000)
-  $('#response').fadeIn(5000)
+  $('#getGames').fadeIn(7000)
+  $('#response').fadeIn(7000)
 }
 
 const getGamesFailure = function (data) {
@@ -18,7 +18,7 @@ const getGamesFailure = function (data) {
 const createGameSuccess = function (data) {
   store.game = data.game
   $('.box').text('')
-  $('.container').show()
+  $('.container').fadeIn(5000)
 }
 
 const createGameFailure = function () {
