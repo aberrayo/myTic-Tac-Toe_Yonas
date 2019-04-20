@@ -32,7 +32,7 @@ const winConditions = function (a, player) {
 
 const endGame = function () {
   if (gameOver === true) {
-    $('.container').fadeOut(1500)
+    $('.container').fadeOut()
     $('#response').text('Invalid move')
     setTimeout(function () {
       $('#response').text('')
@@ -85,7 +85,7 @@ const onClick = function (event) {
   } else if (content !== '') {
     $('#response').text('Invalid move')
   } else if (gameOver === true) {
-    $('#response').text('Invalid move')
+    $('#count').text('Invalid move')
   }
 }
 
