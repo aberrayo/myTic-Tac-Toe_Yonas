@@ -23,21 +23,23 @@ const winConditions = function (a, player) {
 (a[1] === a[4] && a[4] === a[7] && a[1] === player) ||
 (a[2] === a[5] && a[5] === a[8] && a[2] === player)) {
     gameOver = true
-    $('#stats').text(`${player} wins!`)
+    $('#count').text(`${player} wins!`)
   } else if (a.every(index => index !== '')) {
     gameOver = true
-    $('#stats').text('Draw!')
+    $('#count').text('Draw!')
   }
 }
 
 const endGame = function () {
   if (gameOver === true) {
-    $('.container').fadeOut(5000)
+    $('.container').fadeOut(1500)
+    $('#response').text('Invalid move')
     setTimeout(function () {
-      $('#stats').text('')
+      $('#response').text('')
+      $('#count').text('')
     }, 4000)
     $('#response').hide()
-    $('#stats').show()
+    $('#count').show()
     player = 'X'
   }
 }
@@ -48,7 +50,7 @@ const newGame = function (event) {
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure)
   $('.box').text('')
-  $('#stats').text('')
+  $('#count').text('')
   $('#response').show()
   a = ['', '', '', '', '', '', '', '', '']
   player = 'O'
@@ -81,6 +83,8 @@ const onClick = function (event) {
     endGame()
     turn()
   } else if (content !== '') {
+    $('#response').text('Invalid move')
+  } else if (gameOver === true) {
     $('#response').text('Invalid move')
   }
 }
