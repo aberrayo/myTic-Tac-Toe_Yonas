@@ -70,7 +70,7 @@ const signOutSuccess = function (data) {
   $('#response').text('Successful SignOut!')
   $('#count').fadeOut()
   $('#change-password').fadeOut(4000)
-  $('.container').fadeOut(4000)
+  $('.container').hide()
   $('.stats').fadeOut(4000)
   $('#create').fadeOut(4000)
   store.user = null
